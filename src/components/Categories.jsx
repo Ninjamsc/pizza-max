@@ -17,11 +17,36 @@ function Categories() {
           >
             Все
           </li>
-          <li className={activeIndex === 1 ? "active" : ""}>Мясные</li>
-          <li className={activeIndex === 2 ? "active" : ""}>Вегетарианские</li>
-          <li className={activeIndex === 3 ? "active" : ""}>Гриль</li>
-          <li className={activeIndex === 4 ? "active" : ""}>Острые</li>
-          <li className={activeIndex === 5 ? "active" : ""}>Закрытые</li>
+          <li
+            onClick={() => onClickCategory()}
+            className={activeIndex === 1 ? "active" : ""}
+          >
+            Мясные
+          </li>
+          <li
+            onClick={() => onClickCategory()}
+            className={activeIndex === 2 ? "active" : ""}
+          >
+            Вегетарианские
+          </li>
+          <li
+            onClick={() => onClickCategory()}
+            className={activeIndex === 3 ? "active" : ""}
+          >
+            Гриль
+          </li>
+          <li
+            onClick={() => onClickCategory()}
+            className={activeIndex === 4 ? "active" : ""}
+          >
+            Острые
+          </li>
+          <li
+            onClick={() => onClickCategory()}
+            className={activeIndex === 5 ? "active" : ""}
+          >
+            Закрытые
+          </li>
         </ul>
       </div>
     </div>
