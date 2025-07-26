@@ -3,7 +3,7 @@ import React from "react";
 function PizzaBlock({ title, price }) {
   const [pizzaCount, setPizzaCount] = React.useState(0);
   const onClickAdd = () => {
-    setPizzaCount(pizzaCount + 5);
+    setPizzaCount(pizzaCount + 1);
   };
 
   return (
@@ -37,7 +37,7 @@ function PizzaBlock({ title, price }) {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
+          <i>{pizzaCount}</i>
         </div>
       </div>
     </div>
