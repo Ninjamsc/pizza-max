@@ -8,7 +8,7 @@ function Header() {
           <img width="38" src="img/pizza-logo.svg" alt="Pizza logo" />
           <div>
             <h1>Pizza MAX</h1>
-            <p>самая вкусная пицца во вселенной</p>
+            <p>самая вкусная пицца на Селигере</p>
           </div>
         </div>
         <div class="header__cart">
