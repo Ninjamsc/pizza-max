@@ -1,15 +1,9 @@
 import React from "react";
-
-function PizzaBlock({ title, price }) {
-  const [pizzaCount, setPizzaCount] = React.useState(0);
-  const onClickAdd = () => {
-    setPizzaCount(pizzaCount + 1);
-  };
-
+function PizzaBlock() {
   return (
-    <div class="izza-block">
+    <div class="pizza-block">
       <img class="pizza-block__image" src="./img/pizza_def.jpg" alt="Pizza" />
-      <h4 class="piza-block__title">{title}</h4>
+      <h4 class="pizza-block__title">Чизбургер-пицца</h4>
       <div class="pizza-block__selector">
         <ul>
           <li class="active">тонкое</li>
@@ -21,9 +15,9 @@ function PizzaBlock({ title, price }) {
           <li>40 см.</li>
         </ul>
       </div>
-      <div class="pizz-block__bottom">
-        <div class="piza-block__price">от {price} ₽</div>
-        <button onClick={onClickAdd} class="button button--outline button--add">
+      <div class="pizza-block__bottom">
+        <div class="pizza-block__price">от 395 ₽</div>
+        <div class="button button--outline button--add">
           <svg
             width="12"
             height="12"
@@ -37,8 +31,8 @@ function PizzaBlock({ title, price }) {
             />
           </svg>
           <span>Добавить</span>
-          <i>{pizzaCount}</i>
-        </button>
+          <i>2</i>
+        </div>
       </div>
     </div>
   );
