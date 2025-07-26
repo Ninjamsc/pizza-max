@@ -41,7 +41,7 @@ function PizzaBlock(title, price) {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
+          <i>{pizzaCount}</i>
         </button>
       </div>
     </div>
