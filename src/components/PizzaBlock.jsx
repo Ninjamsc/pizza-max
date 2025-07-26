@@ -26,7 +26,7 @@ function PizzaBlock(title, price) {
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от 395 ₽</div>
+        <div className="pizza-block__price">от {price} ₽</div>
         <button
           onClick={onClickAdd}
           className="button button--outline button--add"
