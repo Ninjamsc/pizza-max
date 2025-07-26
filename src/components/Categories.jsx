@@ -2,10 +2,10 @@ import React from "react";
 
 function Categories() {
   return (
-    <div className="categories">
-      <div className="container">
+    <div class="categories">
+      <div class="container">
         <ul>
-          <li className="active">Все</li>
+          <li class="active">Все</li>
           <li>Мясные</li>
           <li>Вегетарианские</li>
           <li>Гриль</li>

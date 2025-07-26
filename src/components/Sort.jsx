@@ -2,8 +2,8 @@ import React from "react";
 
 function Sort() {
   return (
-    <div className="sort">
-      <div className="sort__label">
+    <div class="sort">
+      <div class="sort__label">
         <svg
           width="10"
           height="6"
@@ -19,9 +19,9 @@ function Sort() {
         <b>Сортировка по:</b>
         <span>популярности</span>
       </div>
-      <div className="sort__popup">
+      <div class="sort__popup">
         <ul>
-          <li className="active">популярности</li>
+          <li class="active">популярности</li>
           <li>цене</li>
           <li>алфавиту</li>
         </ul>

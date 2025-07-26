@@ -7,30 +7,23 @@ function PizzaBlock({ title, price }) {
   };
 
   return (
-    <div className="izza-block">
-      <img
-        className="pizza-block__image"
-        src="./img/pizza_def.jpg"
-        alt="Pizza"
-      />
-      <h4 className="piza-block__title">{title}</h4>
-      <div className="pizza-block__selector">
+    <div class="izza-block">
+      <img class="pizza-block__image" src="./img/pizza_def.jpg" alt="Pizza" />
+      <h4 class="piza-block__title">{title}</h4>
+      <div class="pizza-block__selector">
         <ul>
-          <li className="active">тонкое</li>
+          <li class="active">тонкое</li>
           <li>традиционное</li>
         </ul>
         <ul>
-          <li className="active">26 см.</li>
+          <li class="active">26 см.</li>
           <li>30 см.</li>
           <li>40 см.</li>
         </ul>
       </div>
-      <div className="pizz-block__bottom">
-        <div className="piza-block__price">от {price} ₽</div>
-        <button
-          onClick={onClickAdd}
-          className="button button--outline button--add"
-        >
+      <div class="pizz-block__bottom">
+        <div class="piza-block__price">от {price} ₽</div>
+        <button onClick={onClickAdd} class="button button--outline button--add">
           <svg
             width="12"
             height="12"
