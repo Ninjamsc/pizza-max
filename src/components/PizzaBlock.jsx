@@ -1,5 +1,5 @@
 import React from "react";
-function PizzaBlock(title, price) {
+function PizzaBlock({ title, price }) {
   const [pizzaCount, setPizzaCount] = React.useState(0);
 
   const onClickAdd = () => {
