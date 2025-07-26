@@ -9,7 +9,7 @@ function PizzaBlock({ title, price }) {
   return (
     <div class="pizza-block">
       <img class="pizza-block__image" src="./img/pizza_def.jpg" alt="Pizza" />
-      <h4 class="pizza-block__title">{props.title}</h4>
+      <h4 class="pizza-block__title">{title}</h4>
       <div class="pizza-block__selector">
         <ul>
           <li class="active">тонкое</li>
@@ -22,7 +22,7 @@ function PizzaBlock({ title, price }) {
         </ul>
       </div>
       <div class="pizza-block__bottom">
-        <div class="pizza-block__price">от 395 ₽</div>
+        <div class="pizza-block__price">{price} ₽</div>
         <div class="button button--outline button--add">
           <svg
             width="12"
