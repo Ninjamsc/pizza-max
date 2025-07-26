@@ -27,7 +27,7 @@ function PizzaBlock(title, price) {
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от 395 ₽</div>
-        <div className="button button--outline button--add">
+        <button className="button button--outline button--add">
           <svg
             width="12"
             height="12"
@@ -42,7 +42,7 @@ function PizzaBlock(title, price) {
           </svg>
           <span>Добавить</span>
           <i>2</i>
-        </div>
+        </button>
       </div>
     </div>
   );
