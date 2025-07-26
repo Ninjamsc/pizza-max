@@ -9,16 +9,16 @@ import PizzaBlock from "./components/PizzaBlock";
 
 function App() {
   return (
-    <div className="wrapper">
+    <div class="wrapper">
       <Header />
-      <div className="content">
-        <div className="container">
-          <div className="content__top">
+      <div class="content">
+        <div class="container">
+          <div class="content__top">
             <Categories />
             <Sort />
           </div>
-          <h2 className="content__title">Все пиццы</h2>
-          <div className="content__items"></div>
+          <h2 class="content__title">Все пиццы</h2>
+          <div class="content__items"></div>
           <PizzaBlock price={500} title="4 Сыра" />
           <PizzaBlock price={500} title="4 Сыра" />
           <PizzaBlock price={500} title="4 Сыра" />
