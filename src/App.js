@@ -1,6 +1,5 @@
 // import logo from "./logo.svg";
 // import "./App.css";
-import React from "react";
 import "./scss/app.scss";
 import Header from "./components/Header";
 import Categories from "./components/Categories";
@@ -19,10 +18,10 @@ function App() {
           </div>
           <h2 class="content__title">Все пиццы</h2>
           <div class="content__items"></div>
-          <PizzaBlock price={500} title="4 Сыра" />
-          <PizzaBlock price={500} title="4 Сыра" />
-          <PizzaBlock price={500} title="4 Сыра" />
-          <PizzaBlock price={500} title="4 Сыра" />
+          <PizzaBlock />
+          <PizzaBlock />
+          <PizzaBlock />
+          <PizzaBlock />
         </div>
       </div>
     </div>
