@@ -12,7 +12,7 @@ function Categories() {
       <div className="container">
         <ul>
           <li
-            onClick={onClickCategory}
+            onClick={() => onClickCategory()}
             className={activeIndex === 0 ? "active" : ""}
           >
             Все
