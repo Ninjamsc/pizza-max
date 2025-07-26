@@ -29,12 +29,6 @@ function Categories() {
               {category}
             </li>
           ))}
-          {/* <li
-            onClick={() => onClickCategory(5)}
-            className={activeIndex === 5 ? "active" : ""}
-          >
-            Закрытые
-          </li> */}
         </ul>
       </div>
     </div>
