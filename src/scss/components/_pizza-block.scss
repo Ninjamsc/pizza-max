@@ -9,8 +9,8 @@
   // align-items: 'center';
   // display: flex;
 
-  &:not(:nth-of-type(4n)) {
-    margin-right: 35px;
+  &:not(:nth-of-type(6n)) {
+    margin-right: 40px;
   }
 
   &__image {

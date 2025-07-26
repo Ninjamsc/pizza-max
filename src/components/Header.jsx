@@ -12,7 +12,7 @@ function Header() {
           </div>
         </div>
         <div class="header__cart">
-          <img width="32" src="img/cart.svg" alt="Cart" />
+          <img width="18" src="img/cart.svg" alt="Cart" />
           <span>0 ₽</span>
         </div>
       </div>

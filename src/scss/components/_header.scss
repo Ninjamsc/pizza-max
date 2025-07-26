@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../variables.scss';
 
 .header {
   border-bottom: 1px solid $gray-line;
@@ -28,5 +28,14 @@
     p {
       color: #7b7b7b;
     }
-  }
+  };
+
+  &__cart {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    // width:35%;
+    // height:35%;
+
+}
+
 }
