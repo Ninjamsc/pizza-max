@@ -1,10 +1,15 @@
 import React from "react";
 
-function PizzaBlock() {
+function PizzaBlock({ title, price }) {
+  const [pizzaCount, setPizzaCount] = React.useState(0);
+  const onClickAdd = () => {
+    setPizzaCount(pizzaCount + 5);
+  };
+
   return (
     <div class="pizza-block">
       <img class="pizza-block__image" src="./img/pizza_def.jpg" alt="Pizza" />
-      <h4 class="pizza-block__title">Чизбургер-пицца</h4>
+      <h4 class="pizza-block__title">{props.title}</h4>
       <div class="pizza-block__selector">
         <ul>
           <li class="active">тонкое</li>
