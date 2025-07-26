@@ -33,9 +33,12 @@
   &__cart {
     -webkit-filter: invert(100%);
     filter: invert(100%);
-    transform: translate(0, 10px);
+    transform: translate(0, 15px);
     // width:35%;
     // height:35%;
+     img {
+      transform: translate(0, 2px);
+    }
 
 }
 
