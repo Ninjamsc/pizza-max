@@ -1,5 +1,6 @@
 import React from "react";
 function PizzaBlock() {
+  const [] = React.useState(0);
   return (
     <div className="pizza-block">
       <img
