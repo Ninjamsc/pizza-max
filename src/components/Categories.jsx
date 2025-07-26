@@ -3,8 +3,8 @@ import React from "react";
 function Categories() {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const onClickCategory = (index) => {
-    setActiveIndex(index);
+  const onClickCategory = () => {
+    setActiveIndex(0);
   };
 
   return (
