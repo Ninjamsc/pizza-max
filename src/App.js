@@ -1,38 +1,30 @@
 import React from "react";
 import "./scss/app.scss";
 import Header from "./components/Header";
-import Categories from "./components/Categories";
-import Sort from "./components/Sort";
-import PizzaBlock from "./components/PizzaBlock";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import { Route, Routes } from "react-router-dom";
+import Cart from "./pages/Cart";
+
 // import pizzas from "./assets/pizzas.json";
 // import axios from "axios";
 
 function App() {
-  const [items, setItems] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch("http://localhost:3001/items")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setItems(data);
-      });
-  }, []);
+  const path = window.location.pathname;
+  if (path === "/404") {
+    return <NotFound />;
+  }
 
   return (
     <div className="wrapper">
       <Header />
       <div className="content">
         <div className="container">
-          <div className="content__top">
-            <Categories />
-            <Sort />
-          </div>
-          <h2 className="content__title">Все пиццы</h2>
-          <div className="content__items"></div>
-          {items.map((obj) => (
-            <PizzaBlock key={obj.id} {...obj} />
-          ))}
+          <Routes>
+            <Route path="" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
       </div>
     </div>

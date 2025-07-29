@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 .header {
   border-bottom: 1px solid $gray-line;
@@ -8,6 +8,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 645px) {
+      flex-direction: column;
+
+      .header__cart {
+        // margin-bottom: 20px;
+        margin-top: 20px;
+      }
+    }
   }
 
   &__logo {
@@ -28,18 +37,80 @@
     p {
       color: #7b7b7b;
     }
-  };
+  }
 
   &__cart {
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-    transform: translate(0, 15px);
-    // width:35%;
-    // height:35%;
-     img {
-      transform: translate(0, 2px);
+    /* Rectangle 3 */
+
+    // position: absolute;
+    display: flex;
+    width: 150px;
+    height: 50px;
+    left: 1197px;
+    top: 95px;
+    background: #fe5f1e;
+    border-radius: 30px;
+    color: #fe5f1e img {
+      display: flex;
+      margin-right: 10px;
     }
 
-}
+    span {
+      // display: flex;
+      // position: absolute;
+      display: flex;
+      margin-bottom: 5px;
+      margin-left: 0px;
+      margin-right: 5px;
+      margin-top: 15px;
+      width: 43px;
+      height: 19px;
+      left: 1220px;
+      top: 110px;
 
+      // font-family: "Proxima Nova";
+      // font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 19px;
+
+      color: #ffffff;
+    }
+
+    img {
+      display: flex;
+      margin-bottom: 8px;
+      margin-left: 40px;
+
+      margin-right: 10px;
+      margin-top: 30px;
+      // position: absolute;
+    }
+
+    svg {
+      position: relative;
+      top: -1p;
+      display: flex;
+      width: 50;
+      height: 50;
+      margin-right: 30px;
+      margin-top: 0px;
+    }
+
+    span {
+      display: flex;
+      font-weight: 60;
+      margin-bottom: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-top: 0px;
+      // position: relative;
+      top: 20px;
+      // font-family: "Proxima Nova";
+      // font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
 }

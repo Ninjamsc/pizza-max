@@ -5,6 +5,7 @@
     // justify-content: space-between;
     // max-width: 100%;
     width: 100%; //new
+    
 
     // flex-direction: row;
     // flex-wrap: wrap;
@@ -20,7 +21,9 @@
   ul {
     display: flex;
     flex-wrap: wrap; //new
-    // max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
 
     li {
       background-color: #f9f9f9;
