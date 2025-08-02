@@ -25,6 +25,14 @@ body {
 
   &__title {
     margin: 35px 0;
+    font-weight: 800;
+    font-size: 38;
+    margin-top: 50px;
+    margin-bottom: 50px;
+     @media (max-width: 730px) {
+      visibility: hidden;
+      margin: 10px 0;
+    }
   }
 
   &__items {
@@ -64,22 +72,35 @@ body {
   // display: inline-block;
 
   &--cart {
-    max-width: 820px;
+    margin: 0 auto;
+    max-width: 620px;
     margin: 90px auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .content__title {
       margin: 0;
-      // display: inline-block;
+      display: inline-block;
     }
   }
 }
 
 .cart {
+  margin: 0 auto;
+  width: 90%;
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .content__items {
+    display:block;
+    max-width: 1200px;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
   }
 
   .content__title {

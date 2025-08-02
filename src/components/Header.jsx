@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Search from "./Search";
+
 function Header() {
   return (
     <div className="header">
@@ -14,6 +16,7 @@ function Header() {
             </div>
           </div>
         </Link>
+        <Search />
         {/* {location.pathname !== "/cart" && <Search />} */}
         <div className="header__cart">
           {/* {location.pathname !== "/cart" && ( */}
