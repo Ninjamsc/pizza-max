@@ -47,3 +47,17 @@
   left: 13px;
   top: 10px;
 }
+
+.clear__icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.3;
+  position: absolute;
+  right: 11px;
+  top: 10px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

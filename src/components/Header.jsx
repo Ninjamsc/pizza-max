@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Search from "./Search";
 
-function Header() {
+function Header({ searchValue, setSearchValue }) {
   return (
     <div className="header">
       <div className="container">
@@ -16,7 +16,7 @@ function Header() {
             </div>
           </div>
         </Link>
-        <Search />
+        <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         {/* {location.pathname !== "/cart" && <Search />} */}
         <div className="header__cart">
           {/* {location.pathname !== "/cart" && ( */}

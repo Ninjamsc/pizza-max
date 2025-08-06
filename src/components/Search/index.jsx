@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Search.module.scss";
 
-const Search = () => {
+const Search = ({ searchValue, setSearchValue }) => {
   return (
     <div className={styles.root}>
       <svg
@@ -25,7 +25,27 @@ const Search = () => {
 		c0-119.34,96.751-216.091,216.092-216.091s216.091,96.751,216.091,216.091C471.199,364.244,374.448,460.996,255.108,460.996z"
         />
       </svg>
-      <input className={styles.input} placeholder="Поиск пиццы..." />
+      <input
+        value={searchValue}
+        onChange={(event) => setSearchValue(event.target.value)}
+        className={styles.input}
+        placeholder="Поиск пиццы..."
+      />
+      {searchValue && (
+        <svg
+          onClick={() => setSearchValue("")}
+          className={styles.clear__icon}
+          data-name="Layer 1"
+          height="200"
+          id="Layer_1"
+          viewBox="0 0 200 200"
+          width="200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title />
+          <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
+        </svg>
+      )}
     </div>
   );
 };
