@@ -64,7 +64,7 @@ const Home = ({ searchValue }) => {
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">{isLoading ? skeletons : pizzas}</div>
-      <Pagination onChange={(page) => setCurrentPage(page)} />
+      <Pagination onChangePage={(page) => setCurrentPage(page)} />
     </div>
   );
 };
