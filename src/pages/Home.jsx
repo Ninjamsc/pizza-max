@@ -29,7 +29,7 @@ const Home = ({ searchValue }) => {
     const search = searchValue ? `&title_like=${searchValue}` : "";
 
     fetch(
-      `http://localhost:3001/items?page=${currentPage}&${category}&_sort=${sortBy}${search}`
+      `http://localhost:3001/items?page=${currentPage}&limit=4&${category}&_sort=${sortBy}${search}`
     )
       .then((res) => res.json())
       .then((data) => {
