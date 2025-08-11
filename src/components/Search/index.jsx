@@ -1,8 +1,11 @@
 import React from "react";
 
 import styles from "./Search.module.scss";
+import { SearchContext } from "../../App";
 
-const Search = ({ searchValue, setSearchValue }) => {
+const Search = () => {
+  const { searchValue, setSearchValue } = React.useContext(SearchContext);
+
   return (
     <div className={styles.root}>
       <svg
@@ -15,7 +18,7 @@ const Search = ({ searchValue, setSearchValue }) => {
         width="632.399px"
         height="632.399px"
         viewBox="0 0 632.399 632.399"
-        enable-background="new 0 0 632.399 632.399"
+        enableBackground="new 0 0 632.399 632.399"
       >
         <path
           d="M255.108,0C119.863,0,10.204,109.66,10.204,244.904c0,135.245,109.659,244.905,244.904,244.905

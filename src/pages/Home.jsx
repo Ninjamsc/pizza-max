@@ -11,6 +11,7 @@ const Home = ({ searchValue }) => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [pageCount, setPageCount] = React.useState(1);
   const [sortType, setSortType] = React.useState({
     name: "популярности",
     sortProperty: "rating",
@@ -25,29 +26,31 @@ const Home = ({ searchValue }) => {
     // replace("-", "");
     // const order = sortType.sortProperty.includes("-");
     // ? "asc" : "desc";
-    const category = categoryId > 0 ? `category=${categoryId}` : "";
+    const category = categoryId > 0 ? `&category=${categoryId}` : "";
     const search = searchValue ? `&title_like=${searchValue}` : "";
 
     fetch(
-      `http://localhost:3001/items?page=${currentPage}&limit=4&${category}&_sort=${sortBy}${search}`
+      `http://localhost:3001/items?_page=${currentPage}&_per_page=8${category}&_sort=${sortBy}${search}`
     )
       .then((res) => res.json())
       .then((data) => {
+        console.log(data.data);
         console.log(data);
-        setItems(data);
+        setItems(data.data);
+        setPageCount(data.pages);
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType, searchValue, currentPage]);
+  }, [categoryId, sortType, searchValue, currentPage, pageCount]);
 
   const pizzas = items
-    .filter((obj) => {
-      if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
+    .filter((data) => {
+      if (data.title.toLowerCase().includes(searchValue.toLowerCase())) {
         return true;
       }
       return false;
     })
-    .map((obj) => <PizzaBlock key={obj.id} {...obj} />);
+    .map((data) => <PizzaBlock key={data.id} {...data} />);
 
   const skeletons = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />
@@ -64,7 +67,10 @@ const Home = ({ searchValue }) => {
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">{isLoading ? skeletons : pizzas}</div>
-      <Pagination onChangePage={(number) => setCurrentPage(number)} />
+      <Pagination
+        onChangePage={(number) => setCurrentPage(number)}
+        pageCount={pageCount}
+      />
     </div>
   );
 };

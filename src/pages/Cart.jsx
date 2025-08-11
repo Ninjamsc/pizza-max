@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"; // react router link
 
 const Cart = () => {
   return (
-    <div classNameName="container container--cart">
+    <div className="container container--cart">
       <div className="cart">
         <div className="cart__top">
           <h2 className="content__title">
