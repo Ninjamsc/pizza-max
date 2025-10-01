@@ -56,7 +56,7 @@
 	"editor.cursorSmoothCaretAnimation": "explicit",
 
 	// Настройки шрифта
-	"editor.fontSize": 14,
+	"editor.fontSize": 15,
 	//"editor.fontSize": 20.5,
 	// "editor.lineHeight": 28.5,
 	// "editor.fontWeight": "400",
