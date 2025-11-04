@@ -9,32 +9,24 @@
 	"editor.detectIndentation": true,
 	"editor.suggestSelection": "first",
 	// "editor.multiCursorModifier": "ctrlCmd",
-
 	// Настройки переноса слов
 	"editor.wordWrap": "bounded",
 	"editor.wrappingIndent": "same",
 	"editor.wordWrapColumn": 80,
-
 	// Прокрутка за пределы последней строки
 	"editor.scrollBeyondLastLine": true,
-
 	// Связанные редактирования тегов
 	"editor.linkedEditing": true,
-
 	// Автоматическое закрытие тегов
 	"html.autoClosingTags": true,
 	"javascript.autoClosingTags": true,
 	"typescript.autoClosingTags": true,
-
 	// Отображение символов
 	"editor.renderControlCharacters": false,
-
 	// Подсветка неоднозначных символов
 	"editor.unicodeHighlight.ambiguousCharacters": false,
-
 	// Быстрые подсказки
 	"html.completion.attributeDefaultValue": "singlequotes",
-
 	// Внешний вид
 	// "editor.bracketPairColorization.enabled": false,
 	// "editor.glyphMargin": false,
@@ -49,12 +41,10 @@
 	// "workbench.layoutControl.enabled": false,
 	// "workbench.editor.editorActionsLocation": "hidden",
 	// "workbench.editor.empty.hint": "hidden",
-
 	// Настройки курсора
 	"editor.cursorBlinking": "expand",
 	"editor.cursorStyle": "line-thin",
 	"editor.cursorSmoothCaretAnimation": "explicit",
-
 	// Настройки шрифта
 	"editor.fontSize": 15,
 	//"editor.fontSize": 20.5,
@@ -68,7 +58,6 @@
 	// "debug.console.fontFamily": "PragmataPro",	// "window.density.editorTabHeight": "compact",
 	// "editor.accessibilitySupport": "off",
 	// "symbols.hidesExplorerArrows": false,
-
 	// Кастомизация подсветки синтаксиса
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
@@ -100,41 +89,36 @@
 			}
 		]
 	},
-
 	// Настройки терминала
 	"terminal.integrated.fontFamily": "monospace",
 	"terminal.integrated.fontSize": 13,
 	"terminal.integrated.tabs.enabled": false,
 	"terminal.integrated.cursorStyle": "line",
-
 	// Настройки обозревателя
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
 	"explorer.compactFolders": false,
 	"workbench.editor.tabSizing": "shrink",
 	"workbench.startupEditor": "newUntitledFile",
-
 	// Настройки отладки
 	"debug.toolBarLocation": "hidden",
 	"debug.focusWindowOnBreak": false,
 	"debug.showInlineBreakpointCandidates": false,
 	"debug.showBreakpointsInOverviewRuler": false,
-
 	// Настройки Emmet
 	"emmet.includeLanguages": {
 		"blade": "html",
 		"javascript": "javascriptreact"
 	},
 	"emmet.triggerExpansionOnTab": true,
-
 	// Настройки форматирования
-	"prettier.semi": false,
+	"prettier.semi": true,
 	"prettier.useTabs": true,
 	"editor.formatOnSave": true,
 	"prettier.singleQuote": true,
 	"prettier.jsxSingleQuote": true,
 	"editor.codeActionsOnSave": {
-		"source.organizeImports": "explicit"
+		"source.organizeImports": "never"
 	},
 	"[prisma]": {
 		// "editor.defaultFormatter": "Prisma.prisma"
@@ -142,12 +126,10 @@
 	"prettier.arrowParens": "avoid",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.inlineSuggest.enabled": true,
-
 	// Настройки для Laravel
 	"[blade]": {
 		// "editor.defaultFormatter": "onecentlin.laravel-blade"
 	},
-
 	// Настройки для Breadcrumbs
 	"breadcrumbs.icons": false,
 	"breadcrumbs.showKeys": false,
@@ -163,7 +145,6 @@
 	"breadcrumbs.showConstants": false,
 	"breadcrumbs.showEnumMembers": false,
 	"breadcrumbs.showConstructors": false,
-
 	// Настройки для JS и TS
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"typescript.updateImportsOnFileMove.enabled": "always",
@@ -172,7 +153,6 @@
 	"javascript.format.semicolons": "remove",
 	"typescript.format.semicolons": "remove",
 	"js/ts.implicitProjectConfig.experimentalDecorators": true,
-
 	// Настройки проверки орфографии
 	"cSpell.language": "en,ru",
 	"cSpell.enabled": true,
@@ -186,7 +166,6 @@
 		"sass",
 		"vue"
 	],
-
 	// Разрешенные символы для Unicode Highlight
 	"editor.unicodeHighlight.allowedCharacters": {
 		"а": true,
@@ -198,7 +177,6 @@
 	},
 	"editor.hideCursorInOverviewRuler": true,
 	"git.enableSmartCommit": true,
-
 	// Исключаемые файлы
 	"files.exclude": {
 		"**/.expo": true,
@@ -206,7 +184,6 @@
 		"**/.idea": true,
 		"**/.nuxt": true
 	},
-
 	// Прочие настройки
 	"files.defaultLanguage": "plaintext",
 	"diffEditor.ignoreTrimWhitespace": false,
