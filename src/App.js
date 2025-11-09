@@ -5,8 +5,8 @@ import Cart from './pages/Cart';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import './scss/app.scss';
-import { decrement, increment } from './redux/slices/filterSlice';
-import { useDispatch, useSelector } from 'react-redux';
+// import { decrement, increment } from './redux/slices/filterSlice';
+// import { useDispatch, useSelector } from 'react-redux';
 
 // import pizzas from "./assets/pizzas.json";
 // import axios from "axios";
@@ -15,8 +15,8 @@ export const SearchContext = React.createContext('');
 
 function App() {
 	const [searchValue, setSearchValue] = React.useState('');
-	const count = useSelector(state => state.counter.value);
-	const dispatch = useDispatch();
+	// const count = useSelector(state => state.counter.value);
+	// const dispatch = useDispatch();
 
 	const path = window.location.pathname;
 
@@ -24,23 +24,8 @@ function App() {
 		return <NotFound />;
 	}
 
-	console.log
-
 	return (
 		<div className='wrapper'>
-			<button
-				aria-label='Increment value'
-				onClick={() => dispatch(increment())}
-			>
-				Increment
-			</button>
-			<span>{count}</span>
-			<button
-				aria-label='Decrement value'
-				onClick={() => dispatch(decrement())}
-			>
-				Decrement
-			</button>
 			<SearchContext.Provider value={{ searchValue, setSearchValue }}>
 				<Header />
 				<div className='content'>
