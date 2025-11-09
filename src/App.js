@@ -19,9 +19,12 @@ function App() {
 	const dispatch = useDispatch();
 
 	const path = window.location.pathname;
+
 	if (path === '/404') {
 		return <NotFound />;
 	}
+
+	console.log
 
 	return (
 		<div className='wrapper'>
