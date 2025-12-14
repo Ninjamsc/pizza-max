@@ -21,10 +21,11 @@ import { setCategoryId } from '../redux/slices/filterSlice';
  * The component uses the context API to get the search value from the search input.
  */
 const Home = () => {
-	const categoryId = useSelector(state => state.filter.categoryId);
+	// const categoryId = useSelector(state => state.filter.categoryId);
 	const dispatch = useDispatch();
+	const { categoryId, sort } = useSelector(state => state.filter);
 
-	const sortType = useSelector(state => state.filter.sort.sortProperty);
+	// const sortType = useSelector(state => state.filter.sort.sortProperty);
 
 	const { searchValue } = React.useContext(SearchContext);
 	const [items, setItems] = React.useState([]);
@@ -41,15 +42,14 @@ const Home = () => {
 		dispatch(setCategoryId(id));
 	};
 
-	console.log(sortType);
+	console.log(sort.sortProperty);
 
 	React.useEffect(() => {
 		setIsLoading(true);
 
-		const sortBy = sortType; //.sortProperty;
-		// replace("-", "");
-		// const order = sortType.sortProperty.includes("-");
-		// ? "asc" : "desc";
+		const sortBy = sort.sortProperty;
+		// .replace('-', '');
+		// const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
 		const category = categoryId > 0 ? `&category=${categoryId}` : '';
 		const search = searchValue ? `&title_like=${searchValue}` : '';
 
@@ -65,7 +65,7 @@ const Home = () => {
 				setIsLoading(false);
 			});
 		window.scrollTo(0, 0);
-	}, [categoryId, sortType, searchValue, currentPage, pageCount]);
+	}, [categoryId, sort.sortProperty, searchValue, currentPage, pageCount]);
 
 	const pizzas = items
 		.filter(data => {
