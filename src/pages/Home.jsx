@@ -9,6 +9,7 @@ import Skeleton from '../components/PizzaBlock/Skeleton';
 import Sort from '../components/Sort';
 
 import { setCategoryId } from '../redux/slices/filterSlice';
+import axios from 'axios';
 
 /**
  * Home page component
@@ -53,20 +54,93 @@ const Home = () => {
 		const category = categoryId > 0 ? `&category=${categoryId}` : '';
 		const search = searchValue ? `&title_like=${searchValue}` : '';
 
-		fetch(
-			`http://localhost:3001/items?_page=${currentPage}&_per_page=8${category}&_sort=${sortBy}${search}`
-		)
-			.then(res => res.json())
-			.then(data => {
-				console.log(data.data);
-				console.log(data);
-				setItems(data.data);
-				setPageCount(data.pages);
+		// fetch(
+		// 	`http://localhost:3001/items?_page=${currentPage}&_per_page=8${category}&_sort=${sortBy}${search}`
+		// )
+		// 	.then(res => res.json())
+		// 	.then(data => {
+		// 		console.log(data.data);
+		// 		console.log(data);
+		// 		setItems(data.data);N
+		// 		setPageCount(data.pages);
+		// 		setIsLoading(false);
+		// 	});
+
+		const fetchItems = async () => {
+			try {
+				const response = await axios.get(
+					`http://localhost:3001/items?_page=${currentPage}&_per_page=8${category}&_sort=${sortBy}${search}`
+				);
+
+				// .then(res => res.data)
+				// .then(response => {
+				// 	console.log('что в рес?', response);
+				// console.log('что в дата?', data);
+				// console.log('что в рес.дата?', response.data);
+				const data = response.data.data;
+				// console.log('что в дата.дата?', data.data);
+				// console.log('что в дата.дата.дата?', data.data.data);
+				if (Array.isArray(data)) {
+					console.log('data является массивом:', data);
+					// Ваш код для работы с массивом
+				} else {
+					console.log('data не является массивом:', data);
+					// Обработка случая, когда data не массив
+				}
+				setItems(data);
+				console.log('что в items?', items);
+				// const filteredData = data.data.filter(item => {
+				// Your filtering logic here
+				// });
+				// Use filteredData as needed
+				// })
+
+				// setItems(data.data);
+				// console.log('что в items?', items);
+				setPageCount(response.data.pages);
 				setIsLoading(false);
-			});
+			} catch (error) {
+				console.error('Ошибка при получении данных:', error);
+			}
+		};
+		fetchItems();
+		// axios
+		// 	.get(
+		// 		`http://localhost:3001/items?_page=${currentPage}&_per_page=8${category}&_sort=${sortBy}${search}`
+		// 	)
+		// 	// .then(res => res.data)
+		// 	.then(response => {
+		// 		console.log('что в рес?', response);
+		// 		// console.log('что в дата?', data);
+		// 		console.log('что в рес.дата?', response.data);
+		// 		const data = response.data.data;
+		// 		console.log('что в дата.дата?', data.data);
+		// 		// console.log('что в дата.дата.дата?', data.data.data);
+		// 		if (Array.isArray(data)) {
+		// 			console.log('data является массивом:', data);
+		// 			// Ваш код для работы с массивом
+		// 		} else {
+		// 			console.log('data не является массивом:', data);
+		// 			// Обработка случая, когда data не массив
+		// 		}
+		// 		// const filteredData = data.data.filter(item => {
+		// 		// Your filtering logic here
+		// 		// });
+		// 		// Use filteredData as needed
+		// 		// })
+
+		// 		setItems(data.data);
+		// 		console.log('что в items?', items);
+		// setPageCount(res.pages);
+		// setIsLoading(false);
+		// 	});
+		// setItems(data);
+		console.log('что в items?', items);
+		console.log(items);
 		window.scrollTo(0, 0);
 	}, [categoryId, sort.sortProperty, searchValue, currentPage, pageCount]);
 
+	console.log(items);
 	const pizzas = items
 		.filter(data => {
 			if (data.title.toLowerCase().includes(searchValue.toLowerCase())) {
