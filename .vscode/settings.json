@@ -2,7 +2,7 @@
 	// Основные настройки редактора
 	"window.openFilesInNewWindow": "off",
 	"editor.tabSize": 2,
-	"editor.folding": false,
+	"editor.folding": true,
 	"editor.insertSpaces": false,
 	"editor.smoothScrolling": true,
 	"editor.minimap.enabled": false,
@@ -28,7 +28,7 @@
 	// Быстрые подсказки
 	"html.completion.attributeDefaultValue": "singlequotes",
 	// Внешний вид
-	// "editor.bracketPairColorization.enabled": false,
+	"editor.bracketPairColorization.enabled": true,
 	// "editor.glyphMargin": false,
 	// "editor.scrollbar.horizontal": "hidden",
 	// "editor.scrollbar.vertical": "hidden",
@@ -85,6 +85,18 @@
 				],
 				"settings": {
 					"fontStyle": ""
+				}
+			},
+			{
+				"scope": [
+					"variable.other.readwrite.alias.js.jsx",
+					"meta.import.js.jsx",
+					"source.js.jsx",
+					"foreground",
+					"variable.other"
+				],
+				"settings": {
+					"foreground": "#c9c899"
 				}
 			}
 		]

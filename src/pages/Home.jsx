@@ -1,14 +1,20 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import qs from 'qs';
+import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../App';
 import Categories from '../components/Categories';
 import Pagination from '../components/Pagination';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Sort from '../components/Sort';
+import { list } from '../components/Sort';
 
-import { setCategoryId } from '../redux/slices/filterSlice';
+import {
+	setCategoryId,
+	setCurrentPage,
+	setFilters,
+} from '../redux/slices/filterSlice';
 import axios from 'axios';
 
 /**
@@ -22,9 +28,13 @@ import axios from 'axios';
  * The component uses the context API to get the search value from the search input.
  */
 const Home = () => {
+	const navigate = useNavigate();
 	// const categoryId = useSelector(state => state.filter.categoryId);
 	const dispatch = useDispatch();
-	const { categoryId, sort } = useSelector(state => state.filter);
+	const isSearch = React.useRef(false);
+	const isMounted = React.useRef(false);
+
+	const { categoryId, sort, currentPage } = useSelector(state => state.filter);
 
 	// const sortType = useSelector(state => state.filter.sort.sortProperty);
 
@@ -32,7 +42,7 @@ const Home = () => {
 	const [items, setItems] = React.useState([]);
 	const [isLoading, setIsLoading] = React.useState(true);
 	// const [categoryId, setCategoryId] = React.useState(0);
-	const [currentPage, setCurrentPage] = React.useState(1);
+	// const [currentPage, setCurrentPage] = React.useState(1);
 	const [pageCount, setPageCount] = React.useState(1);
 	// const [sortType, setSortType] = React.useState({
 	// 	name: 'популярности',
@@ -43,9 +53,13 @@ const Home = () => {
 		dispatch(setCategoryId(id));
 	};
 
+	const onChangePage = number => {
+		dispatch(setCurrentPage(number));
+	};
+
 	console.log(sort.sortProperty);
 
-	React.useEffect(() => {
+	const fetchPizzas = async () => {
 		setIsLoading(true);
 
 		const sortBy = sort.sortProperty;
@@ -137,7 +151,47 @@ const Home = () => {
 		// setItems(data);
 		console.log('что в items?', items);
 		console.log(items);
+	};
+	// Если изменили параметры и если был первый рендер, то подставь параметры из редакса;
+	React.useEffect(() => {
+		if (isMounted.current) {
+			const queryString = qs.stringify({
+				sortProperty: sort.sortProperty,
+				categoryId,
+				currentPage,
+			});
+			navigate(`?${queryString}`);
+		}
+		isMounted.current = true;
+	}, [categoryId, sort.sortProperty, currentPage]);
+
+	// Если был первый рендер, то проверяем url-параметры и сохраняем в redux
+	React.useEffect(() => {
+		if (window.location.search) {
+			const params = qs.parse(window.location.search.substring(1));
+			const sort = list.find(obj => obj.sortProperty === params.sortProperty);
+
+			// list.forEach(obj => {
+			// 	if (obj.sortProperty === params.sortProperty) {
+			// 		dispatch(setSort(obj));
+			// 	}
+			// });
+			dispatch(
+				setFilters({
+					...params,
+					sort,
+				})
+			);
+			isSearch.current = true;
+		}
+	}, []);
+// Если был первый рендер, то запрашиваем пиццы
+	React.useEffect(() => {
 		window.scrollTo(0, 0);
+		if (!isSearch.current) {
+			fetchPizzas();
+		}
+		isSearch.current = false;
 	}, [categoryId, sort.sortProperty, searchValue, currentPage, pageCount]);
 
 	console.log(items);
@@ -164,7 +218,8 @@ const Home = () => {
 			<h2 className='content__title'>Все пиццы</h2>
 			<div className='content__items'>{isLoading ? skeletons : pizzas}</div>
 			<Pagination
-				onChangePage={number => setCurrentPage(number)}
+				currentPage={currentPage}
+				onChangePage={onChangePage}
 				pageCount={pageCount}
 			/>
 		</div>
