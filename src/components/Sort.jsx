@@ -19,6 +19,7 @@ function Sort() {
 	// const onChangeSort = i => {
 	// 	dispatch(setSort(i));
 	// };
+	const sortRef = React.useRef();
 
 	const [open, setOpen] = React.useState(false);
 
@@ -29,6 +30,16 @@ function Sort() {
 		dispatch(setSort(obj));
 		setOpen(false);
 	};
+
+	React.useEffect(() => {
+		const handleClickOutside = event => {
+			if (sortRef.current && !event.path.includes(sortRef.current)) {
+				setOpen(false);
+			}
+		};
+		document.body.addEventListener('click', handleClickOutside);
+		return () => document.body.removeEventListener('click', handleClickOutside);
+	}, []);
 
 	return (
 		<div className='sort'>

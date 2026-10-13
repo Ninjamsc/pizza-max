@@ -90,16 +90,98 @@
 			{
 				"scope": [
 					"variable.other.readwrite.alias.js.jsx",
-					"meta.import.js.jsx",
+					//			"meta.import.js.jsx",
 					"source.js.jsx",
-					"foreground",
-					"variable.other"
+					//		"variable.other"
 				],
 				"settings": {
 					"foreground": "#c9c899"
 				}
-			}
+			},
+			{
+				"scope": [
+					"meta.import.js.jsx",
+					"variable.other"
+				],
+				"settings": {
+					"foreground": "#7cf182"
+				}
+			},
+			{
+				"scope": [
+					"storage.type.function.js.jsx",
+					"meta.function.js.jsx",
+					"entity.name.function.js.jsx",
+					"meta.definition.function.js.jsx"
+				],
+				"settings": {
+					"foreground": "#939df0"
+				}
+			},
+			{
+				"scope": [
+					//					"storage.type.function.js.jsx",
+					//					"meta.function.js.jsx",
+					//"entity.name.function.js.jsx",
+					//"meta.definition.function.js.jsx",
+					//"entity.name.function.js.jsx",
+					//meta.definition.function.js.jsx
+					//"meta.function.js.jsx",
+					"source.js.jsx",
+					//"keyword.other.js.jsx"
+					"meta.function-call.js.jsx",
+					// "meta.function-call.js.jsx meta.function.js.jsx",
+					// "meta.function-call.js.jsx meta.function.js.jsx meta.block.js.jsx",
+					// "meta.function-call.js.jsx meta.function.js.jsx meta.block.js.jsx meta.function-call.js.jsx",
+					// "meta.function-call.js.jsx meta.function.js.jsx meta.block.js.jsx meta.function-call.js.jsx meta.function.js.jsx",
+					// "meta.function-call.js.jsx meta.function.js.jsx meta.block.js.jsx meta.function-call.js.jsx meta.function.js.jsx meta.block.js.jsx"
+					"keyword.control.import.js.jsx",
+					"meta.import.js.jsx",
+					"sDeveloper: Reload Windowource.js.jsx"
+				],
+				"settings": {
+					"foreground": "#98e76b"
+				}
+			},
+			{
+				"scope": [
+					// "storage.type.function.js.jsx",
+					// "meta.function.js.jsx",
+					// "entity.name.function.js.jsx",
+					// "meta.definition.function.js.jsx"
+					"entity.name.function.js.jsx",
+					//"meta.definition.function.js.jsx",
+					//"meta.function.js.jsx",
+					//"source.js.jsx"
+				],
+				"settings": {
+					"foreground": "#aa1b33"
+				}
+			},
+			{
+				"scope": "storage.type.js",
+				"settings": {
+					"foreground": "#976de4"
+				}
+			},
+			// ,
+			// {
+			// 	"scope": "meta.definition.function.jsx entity.name.function.jsx",
+			// 	"settings": {
+			// 		"foreground": "#61AFEF"
+			// 	}
+			// }
 		]
+	},
+	"editor.semanticTokenColorCustomizations": {
+		"rules": {
+			"function.declaration": {
+				"foreground": "#61AFEF"
+			},
+			"function": {
+				"foreground": "#61AFEF"
+			}
+		}
 	},
 	// Настройки терминала
 	"terminal.integrated.fontFamily": "monospace",
